@@ -2,8 +2,6 @@
 
 ## 📋 Available Pages for Development
 
-Your team can now pick from these skeleton pages and start implementing the features:
-
 ### ✅ **High Priority - Ready for Development**
 
 #### 🔐 **Authentication System**
