@@ -15,9 +15,7 @@ export default function Home() {
           {/* Logo and Welcome */}
           <div className="text-center mb-8">
             <div className="flex justify-center mb-4">
-              <div className="w-16 h-16 bg-primary rounded-xl flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-2xl">E</span>
-              </div>
+              <img src="/logo.png" alt="EduBoard Logo" className="h-20 w-auto" />
             </div>
             <h1 className="text-3xl font-bold text-gray-900 mb-2">Welcome to EduBoard</h1>
             <p className="text-gray-600">Access your school management portal</p>
