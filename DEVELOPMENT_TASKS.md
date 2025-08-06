@@ -9,6 +9,7 @@
 - `apps/web/src/app/login/page.tsx` - **Staff/Teacher Login**
 - `apps/web/src/app/login/student/page.tsx` - **Student Login Portal**
 - `apps/web/src/app/login/parent/page.tsx` - **Parent Login Portal**
+- `apps/web/src/app/login/admin/page.tsx` - **Super Admin Login**
 - `apps/web/src/app/forgot-password/page.tsx` - **Password Reset**
 
 **Tasks:**
@@ -17,12 +18,15 @@
 - [ ] Add form validation with React Hook Form + Zod
 - [ ] Create authentication context/hooks
 - [ ] Add role-based redirects after login
+- [ ] Implement two-factor authentication for super admin
+- [ ] Add super admin security restrictions
 
 ---
 
 #### 📊 **Dashboard Pages**
 
-- `apps/web/src/app/dashboard/page.tsx` - **Admin Dashboard**
+- `apps/web/src/app/dashboard/page.tsx` - **School Admin Dashboard**
+- `apps/web/src/app/dashboard/admin/page.tsx` - **Super Admin Dashboard**
 - `apps/web/src/app/dashboard/student/page.tsx` - **Student Dashboard**
 - `apps/web/src/app/dashboard/parent/page.tsx` - **Parent Dashboard**
 
@@ -32,6 +36,10 @@
 - [ ] Implement interactive widgets
 - [ ] Add real-time data updates
 - [ ] Create responsive layouts for mobile
+- [ ] Build super admin system monitoring
+- [ ] Add multi-school management for super admin
+- [ ] Implement system health monitoring
+- [ ] Create billing and subscription management
 
 ---
 
@@ -105,6 +113,59 @@
 - [ ] Grade calculation algorithms
 - [ ] Progress reports generation
 - [ ] Parent/student grade viewing
+
+---
+
+### 🏢 **SUPER ADMIN - System Management**
+
+#### 🔧 **Multi-School Management**
+
+- `apps/web/src/app/admin/schools/page.tsx` - **Schools Directory** _(needs creation)_
+- `apps/web/src/app/admin/schools/new/page.tsx` - **Add New School** _(needs creation)_
+- `apps/web/src/app/admin/schools/[id]/page.tsx` - **School Details** _(needs creation)_
+- `apps/web/src/app/admin/subscriptions/page.tsx` - **Billing Management** _(needs creation)_
+
+**Tasks:**
+
+- [ ] Create school registration system
+- [ ] Implement school onboarding workflow
+- [ ] Add subscription and billing management
+- [ ] Build school performance analytics
+- [ ] Create bulk school operations
+- [ ] Add school data export/import
+
+---
+
+#### 👤 **Global User Management**
+
+- `apps/web/src/app/admin/users/page.tsx` - **System-wide Users** _(needs creation)_
+- `apps/web/src/app/admin/security/page.tsx` - **Security Center** _(needs creation)_
+- `apps/web/src/app/admin/analytics/page.tsx` - **System Analytics** _(needs creation)_
+
+**Tasks:**
+
+- [ ] Global user search and management
+- [ ] Security audit logs
+- [ ] System-wide analytics and reporting
+- [ ] User role and permission management
+- [ ] Data retention and compliance
+- [ ] Security incident management
+
+---
+
+#### 🎧 **Support & Operations**
+
+- `apps/web/src/app/admin/support/page.tsx` - **Support Tickets** _(needs creation)_
+- `apps/web/src/app/admin/settings/page.tsx` - **Global Settings** _(needs creation)_
+
+**Tasks:**
+
+- [ ] Support ticket management system
+- [ ] Customer communication portal
+- [ ] System maintenance scheduling
+- [ ] Global configuration management
+- [ ] Feature flag management
+- [ ] System backup and recovery
 
 ---
 
