@@ -1,0 +1,96 @@
+// This is your Prisma schema file
+// Learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+// Multi-tenancy model
+model Tenant {
+  id          String   @id @default(cuid())
+  name        String
+  domain      String   @unique
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  isActive    Boolean  @default(true)
+  
+  // Relations
+  schools     School[]
+
+  @@map("tenants")
+}
+
+// School model
+model School {
+  id            String   @id @default(cuid())
+  name          String
+  logo          String?
+  address       String?
+  contactEmail  String
+  contactPhone  String?
+  primaryColor  String   @default("#102640")
+  secondaryColor String  @default("#9A927A")
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  
+  // Multi-tenancy
+  tenantId      String
+  tenant        Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  
+  // Relations
+  users         UserSchool[]
+  
+  @@index([tenantId])
+  @@map("schools")
+}
+
+// User model
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  name          String
+  azureAdId     String?   @unique
+  avatar        String?
+  phone         String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  
+  // Relations
+  schools       UserSchool[]
+  
+  @@map("users")
+}
+
+// Role enumeration
+enum Role {
+  SUPER_ADMIN
+  SCHOOL_ADMIN
+  TEACHER
+  STUDENT
+  TUTOR
+}
+
+// User-School relationship (many-to-many with role)
+model UserSchool {
+  id        String   @id @default(cuid())
+  role      Role
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  // Relations
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  schoolId  String
+  school    School   @relation(fields: [schoolId], references: [id], onDelete: Cascade)
+  
+  // A user can have only one role per school
+  @@unique([userId, schoolId])
+  @@index([userId])
+  @@index([schoolId])
+  @@map("user_schools")
+}
