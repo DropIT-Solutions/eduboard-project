@@ -2,282 +2,148 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'EduBoard | Modern School Management System',
-  description:
-    'Transform your educational institution with EduBoard - A comprehensive, cloud-based school management system for the digital age.',
+  title: 'EduBoard | School Management System',
+  description: 'Access your school management portal',
 };
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-b from-white to-gray-50">
-      {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
-        <div className="container flex h-16 items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">E</span>
+    <div className="flex flex-col min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+      {/* Main Content */}
+      <main className="flex-1 flex items-center justify-center p-4">
+        <div className="w-full max-w-md">
+          {/* Logo and Welcome */}
+          <div className="text-center mb-8">
+            <div className="flex justify-center mb-4">
+              <div className="w-16 h-16 bg-primary rounded-xl flex items-center justify-center shadow-lg">
+                <span className="text-white font-bold text-2xl">E</span>
+              </div>
             </div>
-            <span className="font-bold text-xl text-primary">EduBoard</span>
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">Welcome to EduBoard</h1>
+            <p className="text-gray-600">Access your school management portal</p>
           </div>
 
-          <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
-            <Link href="#features" className="text-gray-600 hover:text-primary transition-colors">
-              Features
-            </Link>
-            <Link href="#about" className="text-gray-600 hover:text-primary transition-colors">
-              About
-            </Link>
-            <Link href="#contact" className="text-gray-600 hover:text-primary transition-colors">
-              Contact
-            </Link>
-          </nav>
+          {/* Login Options Card */}
+          <div className="bg-white rounded-xl shadow-lg p-8 space-y-6">
+            {/* School/Organization Login */}
+            <div className="space-y-4">
+              <h2 className="text-xl font-semibold text-gray-800 text-center">
+                Choose Your Login Method
+              </h2>
 
-          <div className="flex items-center space-x-3">
-            <Link
-              href="/login"
-              className="text-sm font-medium text-gray-600 hover:text-primary transition-colors"
-            >
-              Sign In
-            </Link>
-            <Link
-              href="/register"
-              className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-primary/90"
-            >
-              Get Started
-            </Link>
+              {/* Login Buttons */}
+              <div className="space-y-3">
+                <Link
+                  href="/login"
+                  className="w-full flex items-center justify-center gap-3 px-6 py-3 border-2 border-primary bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition-colors"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+                    />
+                  </svg>
+                  Staff & Teacher Login
+                </Link>
+
+                <Link
+                  href="/login/student"
+                  className="w-full flex items-center justify-center gap-3 px-6 py-3 border-2 border-secondary bg-secondary text-white rounded-lg font-medium hover:bg-secondary/90 transition-colors"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                    />
+                  </svg>
+                  Student Login
+                </Link>
+
+                <Link
+                  href="/login/parent"
+                  className="w-full flex items-center justify-center gap-3 px-6 py-3 border-2 border-gray-300 bg-white text-gray-700 rounded-lg font-medium hover:bg-gray-50 transition-colors"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                    />
+                  </svg>
+                  Parent Login
+                </Link>
+              </div>
+
+              <div className="relative my-6">
+                <div className="absolute inset-0 flex items-center">
+                  <div className="w-full border-t border-gray-300"></div>
+                </div>
+                <div className="relative flex justify-center text-sm">
+                  <span className="px-2 bg-white text-gray-500">OR</span>
+                </div>
+              </div>
+
+              {/* School Code Entry */}
+              <div className="space-y-2">
+                <p className="text-sm text-gray-600 text-center">
+                  Have a school code? Enter it below:
+                </p>
+                <form className="space-y-3">
+                  <input
+                    type="text"
+                    placeholder="Enter your school code"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  />
+                  <button
+                    type="submit"
+                    className="w-full px-4 py-2 bg-gray-800 text-white rounded-lg font-medium hover:bg-gray-700 transition-colors"
+                  >
+                    Access School Portal
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            {/* Help Links */}
+            <div className="pt-4 border-t border-gray-200">
+              <div className="flex justify-center space-x-4 text-sm">
+                <Link href="/help" className="text-gray-600 hover:text-primary">
+                  Need Help?
+                </Link>
+                <span className="text-gray-400">•</span>
+                <Link href="/forgot-password" className="text-gray-600 hover:text-primary">
+                  Forgot Password?
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div className="mt-8 text-center space-y-2">
+            <p className="text-sm text-gray-600">
+              For technical support, contact your school administrator
+            </p>
+            <div className="flex justify-center space-x-4 text-sm">
+              <Link href="/privacy" className="text-gray-500 hover:text-gray-700">
+                Privacy Policy
+              </Link>
+              <span className="text-gray-400">•</span>
+              <Link href="/terms" className="text-gray-500 hover:text-gray-700">
+                Terms of Use
+              </Link>
+            </div>
           </div>
         </div>
-      </header>
-
-      {/* Main Content */}
-      <main className="flex-1">
-        {/* Hero Section */}
-        <section className="w-full py-20 md:py-32 lg:py-40">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center space-y-8 text-center">
-              <div className="space-y-4">
-                <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl text-gray-900">
-                  Modern School Management
-                  <span className="text-primary block">Made Simple</span>
-                </h1>
-                <p className="mx-auto max-w-[700px] text-lg text-gray-600 md:text-xl leading-relaxed">
-                  Streamline your educational institution with our comprehensive cloud-based
-                  platform. Manage students, teachers, courses, and administrative tasks all in one
-                  place.
-                </p>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4 w-full max-w-sm">
-                <Link
-                  href="/register"
-                  className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-8 text-base font-medium text-white shadow-lg transition-all hover:bg-primary/90 hover:shadow-xl"
-                >
-                  Start Free Trial
-                </Link>
-                <Link
-                  href="#demo"
-                  className="inline-flex h-12 items-center justify-center rounded-md border border-gray-300 bg-white px-8 text-base font-medium shadow-sm transition-all hover:bg-gray-50 hover:shadow-md"
-                >
-                  Watch Demo
-                </Link>
-              </div>
-
-              <div className="flex items-center space-x-8 text-sm text-gray-500 pt-8">
-                <div className="flex items-center space-x-2">
-                  <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                  <span>No setup fees</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                  <span>Free 30-day trial</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                  <span>Cancel anytime</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Features Section */}
-        <section id="features" className="w-full py-20 bg-white">
-          <div className="container px-4 md:px-6">
-            <div className="text-center space-y-4 mb-16">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Everything You Need to Manage Your School
-              </h2>
-              <p className="mx-auto max-w-[600px] text-gray-600 md:text-lg">
-                From student enrollment to grade management, EduBoard provides all the tools you
-                need.
-              </p>
-            </div>
-
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              <div className="flex flex-col items-center space-y-4 p-6 bg-gray-50 rounded-lg">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <span className="text-primary text-2xl">👥</span>
-                </div>
-                <h3 className="text-xl font-semibold">Student Management</h3>
-                <p className="text-gray-600 text-center">
-                  Complete student profiles, enrollment tracking, and academic progress monitoring.
-                </p>
-              </div>
-
-              <div className="flex flex-col items-center space-y-4 p-6 bg-gray-50 rounded-lg">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <span className="text-primary text-2xl">📚</span>
-                </div>
-                <h3 className="text-xl font-semibold">Grade Management</h3>
-                <p className="text-gray-600 text-center">
-                  Digital gradebooks, automated calculations, and comprehensive reporting.
-                </p>
-              </div>
-
-              <div className="flex flex-col items-center space-y-4 p-6 bg-gray-50 rounded-lg">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <span className="text-primary text-2xl">📅</span>
-                </div>
-                <h3 className="text-xl font-semibold">Schedule Management</h3>
-                <p className="text-gray-600 text-center">
-                  Class scheduling, room assignments, and timetable optimization.
-                </p>
-              </div>
-
-              <div className="flex flex-col items-center space-y-4 p-6 bg-gray-50 rounded-lg">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <span className="text-primary text-2xl">💬</span>
-                </div>
-                <h3 className="text-xl font-semibold">Communication</h3>
-                <p className="text-gray-600 text-center">
-                  Parent-teacher communication, announcements, and messaging system.
-                </p>
-              </div>
-
-              <div className="flex flex-col items-center space-y-4 p-6 bg-gray-50 rounded-lg">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <span className="text-primary text-2xl">📊</span>
-                </div>
-                <h3 className="text-xl font-semibold">Analytics & Reports</h3>
-                <p className="text-gray-600 text-center">
-                  Detailed insights, performance analytics, and customizable reports.
-                </p>
-              </div>
-
-              <div className="flex flex-col items-center space-y-4 p-6 bg-gray-50 rounded-lg">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <span className="text-primary text-2xl">🔒</span>
-                </div>
-                <h3 className="text-xl font-semibold">Security & Privacy</h3>
-                <p className="text-gray-600 text-center">
-                  Enterprise-grade security with role-based access control and data protection.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="w-full py-20 bg-primary">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center space-y-8 text-center">
-              <div className="space-y-4">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-white">
-                  Ready to Transform Your School?
-                </h2>
-                <p className="mx-auto max-w-[600px] text-lg text-white/90">
-                  Join hundreds of educational institutions already using EduBoard to streamline
-                  their operations.
-                </p>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="/register"
-                  className="inline-flex h-12 items-center justify-center rounded-md bg-white px-8 text-base font-medium text-primary shadow-lg transition-all hover:bg-gray-50 hover:shadow-xl"
-                >
-                  Start Your Free Trial
-                </Link>
-                <Link
-                  href="/contact"
-                  className="inline-flex h-12 items-center justify-center rounded-md border border-white/30 bg-transparent px-8 text-base font-medium text-white transition-all hover:bg-white/10"
-                >
-                  Contact Sales
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
 
-      {/* Footer */}
-      <footer className="w-full py-12 border-t bg-white">
-        <div className="container px-4 md:px-6">
-          <div className="grid gap-8 md:grid-cols-4">
-            <div className="space-y-4">
-              <div className="flex items-center space-x-2">
-                <div className="w-6 h-6 bg-primary rounded flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">E</span>
-                </div>
-                <span className="font-bold text-lg">EduBoard</span>
-              </div>
-              <p className="text-sm text-gray-600">
-                Empowering educational institutions with modern technology.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <h4 className="font-semibold">Product</h4>
-              <nav className="flex flex-col space-y-2 text-sm">
-                <Link href="#features" className="text-gray-600 hover:text-primary">
-                  Features
-                </Link>
-                <Link href="/pricing" className="text-gray-600 hover:text-primary">
-                  Pricing
-                </Link>
-                <Link href="/demo" className="text-gray-600 hover:text-primary">
-                  Demo
-                </Link>
-              </nav>
-            </div>
-
-            <div className="space-y-4">
-              <h4 className="font-semibold">Company</h4>
-              <nav className="flex flex-col space-y-2 text-sm">
-                <Link href="/about" className="text-gray-600 hover:text-primary">
-                  About
-                </Link>
-                <Link href="/contact" className="text-gray-600 hover:text-primary">
-                  Contact
-                </Link>
-                <Link href="/careers" className="text-gray-600 hover:text-primary">
-                  Careers
-                </Link>
-              </nav>
-            </div>
-
-            <div className="space-y-4">
-              <h4 className="font-semibold">Legal</h4>
-              <nav className="flex flex-col space-y-2 text-sm">
-                <Link href="/privacy" className="text-gray-600 hover:text-primary">
-                  Privacy Policy
-                </Link>
-                <Link href="/terms" className="text-gray-600 hover:text-primary">
-                  Terms of Service
-                </Link>
-                <Link href="/security" className="text-gray-600 hover:text-primary">
-                  Security
-                </Link>
-              </nav>
-            </div>
-          </div>
-
-          <div className="border-t pt-8 mt-8">
-            <p className="text-center text-sm text-gray-600">
-              &copy; {new Date().getFullYear()} EduBoard by DropIT Solutions. All rights reserved.
-            </p>
-          </div>
-        </div>
+      {/* Simple Footer */}
+      <footer className="py-4 text-center text-sm text-gray-500">
+        &copy; {new Date().getFullYear()} EduBoard. All rights reserved.
       </footer>
     </div>
   );
