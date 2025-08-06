@@ -12,13 +12,11 @@ export default function Home() {
       {/* Main Content */}
       <main className="flex-1 flex items-center justify-center p-4">
         <div className="w-full max-w-md">
-          {/* Logo and Welcome */}
+          {/* Logo */}
           <div className="text-center mb-8">
-            <div className="flex justify-center mb-4">
-              <img src="/logo.png" alt="EduBoard Logo" className="h-20 w-auto" />
+            <div className="flex justify-center">
+              <img src="/logo.png" alt="EduBoard Logo" className="h-64 w-auto" />
             </div>
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">Welcome to EduBoard</h1>
-            <p className="text-gray-600">Access your school management portal</p>
           </div>
 
           {/* Login Options Card */}
