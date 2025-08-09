@@ -17,7 +17,7 @@ export default function LoginPage() {
     return (
       <div>
         <p>Welcome, {accounts[0].username}</p>
-        {/* Optionally add logout */}
+        {/* Hello */}
       </div>
     );
   }
